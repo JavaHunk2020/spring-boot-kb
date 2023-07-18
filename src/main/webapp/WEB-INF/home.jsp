@@ -35,28 +35,7 @@
       <span style="color:red;font-size: 20px;font-weight: bold;border: 1px solid red">${message}</span>
       <br>
   	  <hr/>
-  	  <form action="auth" method="post">
-  	      <div style="width: 50%;">
-  	            
-  	            <label>Username/Email</label>
-  	            <input type="text" name="username" class="form-control">
-  	            <label>Password</label>
-  	            <input type="password" name="password" class="form-control">
-  	            <hr/> 
-  	            <button type="submit" class="btn btn-primary">Login</button>
-  	            
-  	            <button type="reset" class="btn btn-danger">Reset</button>
-  	            
-  	             <a href="signup">
-  	           		  <button type="button" class="btn btn-warning">Signup</button>
-  	             </a>
-  	             
-  	              
-  	             <a href="showAllSignup">
-  	           		  <button type="button" class="btn btn-primary">Show All Signups</button>
-  	             </a>
-  	  </div>
-  	  </form>
+  	  <h1>THIS MY HOME PAGE</h1>
   	  
   	  	
   </div>
