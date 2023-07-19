@@ -11,5 +11,9 @@ public class HelloController {
 	public String showPage() {
 		return "hello";
 	}
+	
+	public static void main(String[] args) {
+		String str="";
+	}
 
 }
