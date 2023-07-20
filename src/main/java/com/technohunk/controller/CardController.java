@@ -84,14 +84,7 @@ public class CardController {
 	@GetMapping("/showCards")
 	public String showCards(Model model) {
 		List<CreditCardType> creditCardList = cardTypesRepository.findAll();
-
-		List<CreditCardTypeDTO> cardTypeDTOs = new ArrayList<>();
-		for (CreditCardType crt : creditCardList) {
-			CreditCardTypeDTO cardTypeDTO = new CreditCardTypeDTO();
-			BeanUtils.copyProperties(crt, cardTypeDTO);
-			cardTypeDTOs.add(cardTypeDTO);
-		}
-		model.addAttribute("cardTypeDTOs", cardTypeDTOs);
+		model.addAttribute("cardTypeDTOs", creditCardList);
 		return "showCards";
 	}
 
