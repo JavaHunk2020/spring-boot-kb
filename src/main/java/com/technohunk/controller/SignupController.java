@@ -31,6 +31,7 @@ public class SignupController {
 		 entity.setGender(signupDTO.getGender());
 		 entity.setName(signupDTO.getName());
 		 entity.setPassword("test12");
+		 
 		 repository.save(entity);
 		 model.addAttribute("message", "Ahahh!!!!!!!!!! done");
 		return "login";
