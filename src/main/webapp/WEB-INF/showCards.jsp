@@ -1,4 +1,5 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "pra" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style type="text/css">
+      html {
+        font-size: 16px;
+      }
+    </style>
 </head>
 <body>
    <header style="height: 30px;background-color:yellow; ">
@@ -30,10 +36,12 @@
    	   
    	   
    	 <hr/>
-   	 
+   	   <span style="font-weight: bold;font-size: 18px;">Total Records : ${pra:length(cardTypeDTOs)}</span>
       <c:forEach items="${cardTypeDTOs}" var="item">
 		<div class="card" style="width: 100%;">
 			<div style="width: 50%; float: right; display: inline;">
+			
+			<!-- @GetMapping("/cimage") -->
 				<img class="card-img-top img-thumbnail"
 					src="cimage?ctid=${item.id}"
 					alt="Card image" style="width: 250px; margin-top: 10px;margin-left: 10px;">
@@ -80,8 +88,11 @@
 				</table>
 				   <span style="float: right;">
 				    <a href="${pageContext.request.contextPath}/applyForCreditCard?name=${item.name}&type=${item.type}&sid=${sessionScope.userLoggedIn.sid}">
-				   			<button type="button" class="btn btn-success">Apply</button>
+				   			<button type="button" class="btn btn-success" style="margin-right: 1REM ">Apply</button>
 				   </a>
+				    <a href="${pageContext.request.contextPath}/deleteCard?ccode=${item.ccode}">
+				   		     	<button type="button" class="btn btn-danger">Delete</button>
+				   			</a>
 				   </span>
 			</div>
 		</div>

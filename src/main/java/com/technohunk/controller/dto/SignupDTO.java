@@ -3,14 +3,7 @@ package com.technohunk.controller.dto;
 import java.util.Date;
 
 public class SignupDTO {
-	
-	@Override
-	public String toString() {
-		return "SignupDTO [sid=" + sid + ", name=" + name + ", password=" + password + ", email=" + email + ", gender="
-				+ gender + ", passportFlag=" + passportFlag + ", creditCardFlag=" + creditCardFlag + ", cardStatus="
-				+ cardStatus + ", photo=" + photo + ", hid=" + hid + ", role=" + role + ", applicationId="
-				+ applicationId + ", cardName=" + cardName + ", applyDate=" + applyDate + "]";
-	}
+
 	private int sid;
 	private String name;
 	private String password;
@@ -25,6 +18,17 @@ public class SignupDTO {
 	private String applicationId;
 	private String cardName;
 	private Date applyDate;
+	
+	public SignupDTO() {
+		
+	}
+	
+	public SignupDTO(int sid, String name, String email, String gender) {
+		this.sid = sid;
+		this.name = name;
+		this.email = email;
+		this.gender = gender;
+	}
 	
 	public String getApplicationId() {
 		return applicationId;
@@ -106,16 +110,7 @@ public class SignupDTO {
 		this.passportFlag = passportFlag;
 	}
 
-	public SignupDTO() {
-		
-	}
-	
-	public SignupDTO(int sid, String name, String email, String gender) {
-		this.sid = sid;
-		this.name = name;
-		this.email = email;
-		this.gender = gender;
-	}
+
 	public int getSid() {
 		return sid;
 	}
@@ -142,5 +137,12 @@ public class SignupDTO {
 	}
 	
 	
+	@Override
+	public String toString() {
+		return "SignupDTO [sid=" + sid + ", name=" + name + ", password=" + password + ", email=" + email + ", gender="
+				+ gender + ", passportFlag=" + passportFlag + ", creditCardFlag=" + creditCardFlag + ", cardStatus="
+				+ cardStatus + ", photo=" + photo + ", hid=" + hid + ", role=" + role + ", applicationId="
+				+ applicationId + ", cardName=" + cardName + ", applyDate=" + applyDate + "]";
+	}
 
 }

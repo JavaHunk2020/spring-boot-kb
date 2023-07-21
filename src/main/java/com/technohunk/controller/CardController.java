@@ -55,6 +55,14 @@ public class CardController {
 		// Convert multipart object to byte[]
 		binder.registerCustomEditor(byte[].class, new ByteArrayMultipartFileEditor());
 	}
+	
+	
+	//?ccode=CCPOQ-294
+   @GetMapping("/deleteCard")
+	public String deleteCard(@RequestParam String  ccode,Model model) {
+	     cardTypesRepository.deleteByCcode(ccode);
+	     return "redirect:/showCards";
+	}
 
 	@GetMapping("/addNewCard")
 	public String addCard(Model model) {
